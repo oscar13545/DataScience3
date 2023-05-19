@@ -1,9 +1,6 @@
 import time
 start_time = time.time()
 
-import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-
 # Python ≥3.5 is required
 import sys
 assert sys.version_info >= (3, 5)
