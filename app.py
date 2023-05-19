@@ -5,6 +5,17 @@ import tensorflow as tf
 import keras
 import numpy as np
 
+with open("Michael_Jackson.txt") as f:
+    shakespeare_text = f.read()
+    
+"".join(sorted(set(shakespeare_text.lower())))
+
+tokenizer = keras.preprocessing.text.Tokenizer(char_level=True)
+tokenizer.fit_on_texts(shakespeare_text)
+
+tokenizer.texts_to_sequences(["First"])
+
+tokenizer.sequences_to_texts([[20, 6, 9, 8, 3]])
 
 def preprocess(texts):
     X = np.array(tokenizer.texts_to_sequences(texts)) - 1
