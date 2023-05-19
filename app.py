@@ -49,14 +49,15 @@ def main():
     # Get user input for the starting word or phrase
     seed_text = st.text_input("Enter the starting word or phrase")
 
+    song = ""
     if seed_text:
         # Generate the song
         tf.random.set_seed(42)
         song = complete_song(seed_text, num_lines=8, chars_per_line=80, temperature=0.5)
 
-        # Display the generated song
-        st.subheader("Generated Song")
-        st.text_area("Song Lyrics", value=song, height=400)
+    # Display the generated song
+    st.subheader("Generated Song")
+    st.text_area("Song Lyrics", value=song, height=400)
 
 if __name__ == "__main__":
     main()
