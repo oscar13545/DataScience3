@@ -16,6 +16,8 @@ tokenizer.fit_on_texts(shakespeare_text)
 tokenizer.texts_to_sequences(["First"])
 
 tokenizer.sequences_to_texts([[20, 6, 9, 8, 3]])
+max_id = len(tokenizer.word_index) # number of distinct characters
+dataset_size = tokenizer.document_count 
 
 def preprocess(texts):
     X = np.array(tokenizer.texts_to_sequences(texts)) - 1
