@@ -5,6 +5,9 @@ import tensorflow as tf
 import keras
 
 
+def preprocess(texts):
+    X = np.array(tokenizer.texts_to_sequences(texts)) - 1
+    return tf.one_hot(X, max_id)
 
 def next_char(text, temperature=1):
     X_new = preprocess([text])
